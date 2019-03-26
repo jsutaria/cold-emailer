@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/jsutaria/cold-emailer/issues"
   },
-  "homepage": "https://github.com/jsutaria/cold-emailer#readme"
+  "homepage": "https://github.com/jsutaria/cold-emailer#readme",
+  "dependencies": {
+    "nodemailer": "^6.0.0"
+  }
 }
