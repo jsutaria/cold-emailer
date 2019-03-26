@@ -1,0 +1,24 @@
+{
+  "name": "cold-emailer",
+  "version": "1.0.0",
+  "description": "An app to send easy cold emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsutaria/cold-emailer.git"
+  },
+  "keywords": [
+    "node",
+    "cold-emailer",
+    "heroku"
+  ],
+  "author": "Jainil Sutaria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsutaria/cold-emailer/issues"
+  },
+  "homepage": "https://github.com/jsutaria/cold-emailer#readme"
+}
