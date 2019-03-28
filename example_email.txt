@@ -1,0 +1,9 @@
+Dear $Name$,
+
+My name is $@Personal Name$ and I was given your contact information from $WarmIntro$. I am writing to you because I am a part of an organization known as BigMoney123. After hearing about $Company$, I really feel as though your company really aligns with our values especially because of your involvement with $Vertical$.
+I would love to get your money so that we can get rich together.
+
+Thanks,
+$@Personal Name$
+$@Personal Email$
+C.E.O. of BigMoney123

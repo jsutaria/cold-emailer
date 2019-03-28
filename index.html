@@ -9,12 +9,13 @@
 
     <h2>Email format</h2>
     Subject: <input type="text" name="subject"><br>
-    Email:<br><textarea rows="5" cols="80" form="main" name="email"></textarea><br>
+    Email: (Include all placeholders as a <p style="font-family: Courier">$PLACEHOLDER$)</p> <br>
+    <textarea rows="5" cols="80" form="main" name="email"></textarea><br>
     Files: Coming soon!<br>
 
     <h2>Spreadsheet of Email Data</h2>
     Format: (CSV) <br>
-    <p style="font-family: Courier">Email,Name,$PLACEHOLDER$ (i.e. $Company$),$PLACEHOLDER2$ (i.e. $Vertical$),...</p>
+    <p style="font-family: Courier">Email, Name, PLACEHOLDER (i.e. Company), PLACEHOLDER2 (i.e. Vertical), ...</p>
     <textarea rows="10" cols="80" form="main" name="data"></textarea><br>
     <input type="submit">
   </form>
