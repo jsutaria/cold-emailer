@@ -7,11 +7,19 @@ app.get('/', (req, res) => {
   res.sendFile('index.html', { root: __dirname });
 })
 
+app.get('/confirmed', (req, res) => {
+  res.sendFile('confirmed.html', { root: __dirname });
+})
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', (req, res) => {
   console.log(req.body);
-  res.sendFile('confirmed.html', { root: __dirname });
+  res.redirect("confirmed");
+})
+
+app.post('/confirmed', (req, res) => {
+  res.redirect("/");
 })
 
 .listen(port);
