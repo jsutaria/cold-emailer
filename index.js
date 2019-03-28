@@ -1,26 +1,17 @@
-// var emailer = require('./emailer');
-var http = require('http');
-var fs = require('fs');
-var port = process.env.PORT || 8080
+const port = process.env.PORT || 8080;
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
 
-console.log("Hello, world")
-//emailer.sendMail("jainilsutaria1@gmail.com", "test");
+app.get('/', (req, res) => {
+  res.sendFile('index.html', { root: __dirname });
+})
 
-http.createServer(function (req, res) {
-  var body = "";
-  req.on('data', function (chunk) {
-    body += chunk;
-  });
-  req.on('end', function () {
-    console.log('POSTed: ' + body);
-    fs.readFile("./index.html", function(err, data) {
-      if (err) {
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        return res.end("404 Not Found");
-      }
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  });
-}).listen(port);
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/', (req, res) => {
+  console.log(req.body);
+  res.sendFile('confirmed.html', { root: __dirname });
+})
+
+.listen(port);

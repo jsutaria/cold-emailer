@@ -4,18 +4,21 @@
   <h1>Cold Emailer</h1>
   <form method="post" id="main">
     <h2>User Email Info:</h2>
-    Username: <input type="text" name="username"><br>
+    Name: <input type="text" name="name"><br>
+    Email: <input type="text" name="email"><br>
     Password: <input type="password" name="password"><br>
 
     <h2>Email format</h2>
     Subject: <input type="text" name="subject"><br>
-    Email: (Include all placeholders as a <p style="font-family: Courier">$PLACEHOLDER$)</p> <br>
-    <textarea rows="5" cols="80" form="main" name="email"></textarea><br>
+    Body:<br>
+    Include all placeholders as a <code>$PlaceHolder$</code><br>
+    Include personal information as <code>$@Personal PlaceHolder$</code><br>
+    <textarea rows="5" cols="80" form="main" name="body"></textarea><br>
     Files: Coming soon!<br>
 
     <h2>Spreadsheet of Email Data</h2>
     Format: (CSV) <br>
-    <p style="font-family: Courier">Email, Name, PLACEHOLDER (i.e. Company), PLACEHOLDER2 (i.e. Vertical), ...</p>
+    <code>Email, Name, PlaceHolder (i.e. Company), PlaceHolder2 (i.e. Vertical), ...</code><br>
     <textarea rows="10" cols="80" form="main" name="data"></textarea><br>
     <input type="submit">
   </form>
