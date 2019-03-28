@@ -1,6 +1,11 @@
 var nodemailer = require('nodemailer');
+var csv = require('./csv-parser');
 
-exports.sendMail = (receiver, subject) => {
+readSheetEmails = (data) => {
+  var email = new Object();
+};
+
+sendSingleEmail = (data) => {
   var transporter = nodemailer.createTransport({
       host: "smtp-mail.outlook.com", // hostname
       secureConnection: false,
@@ -9,21 +14,26 @@ exports.sendMail = (receiver, subject) => {
          ciphers:'SSLv3'
       },
       auth: {
-          user: process.env.USERNAME,
-          pass: process.env.PASSWORD,
+          user: data.email,
+          pass: data.password,
       }
   });
 
   var mailOptions = {
-      from: process.env.NAME,
-      to: receiver,
-      subject: subject,
-      html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js'
+      from: data.name,
+      to: data.receiver,
+      subject: data.subject,
+      html: data.body
   };
 
-  mailOptions.to = receiver;
   transporter.sendMail(mailOptions, (error, info) => {
-      if(error) return console.log(error);
+      if(error) {
+        console.log("My err: " + error);
+        return false;
+      }
       console.log('Message sent: ' + info.response);
   });
 }
+
+exports.sendSingle = sendSingleEmail;
+exports.readSheetEmails = readSheetEmails;

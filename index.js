@@ -1,6 +1,7 @@
 const port = process.env.PORT || 8080;
 var express = require('express');
 var app = express();
+var emailer = require('./emailer');
 var bodyParser = require('body-parser');
 
 app.get('/', (req, res) => {
@@ -14,7 +15,13 @@ app.get('/confirmed', (req, res) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', (req, res) => {
-  console.log(req.body);
+  var data = req.body;
+
+  if(!data.name || !data.email || !data.password || !data.subject || !data.body || !data.data) {
+    res.sendFile('index.html', { root: __dirname });
+    return;
+  }
+  
   res.redirect("confirmed");
 })
 
@@ -22,4 +29,4 @@ app.post('/confirmed', (req, res) => {
   res.redirect("/");
 })
 
-.listen(port);
+app.listen(port);
