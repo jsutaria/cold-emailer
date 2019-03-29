@@ -17,11 +17,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/', (req, res) => {
   var data = req.body;
 
-  if(!data.name || !data.email || !data.password || !data.subject || !data.body || !data.data) {
+  if(!data.name || !data.email  || !data.subject || !data.body || !data.data) {
     res.sendFile('index.html', { root: __dirname });
     return;
   }
-  
+
+  emailer.readSheetEmails(data);
+  return;
   res.redirect("confirmed");
 })
 
