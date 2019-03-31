@@ -23,7 +23,6 @@ app.post('/', (req, res) => {
   }
 
   emailer.readSheetEmails(data);
-  return;
   res.redirect("confirmed");
 })
 
